@@ -1,12 +1,16 @@
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 # 
-#       A quick GUI application that converts 
+#       A quick application that converts 
 #       values between different unit conversions
 #
-#   https://www.dummies.com/programming/python/using-tkinter-widgets-in-python/
+#   Only doing between miles and kilometers
+#
+#
+#
+#
 #
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
+'''
 from tkinter import *
 
 
@@ -28,11 +32,14 @@ class Converter:
         self.inputValue = "\t"
         self.inputValueWidget = Entry(self.topFrame, text = self.inputValue)
 
-        '''
-        self.originalUnit = StringVar("\t")
-        self.originalDefault = "\t"
-        self.originalUnitWidget = OptionMenu(self.topFrame, )
-        '''
+        
+        self.originalUnit = StringVar(master, "\t")
+        self.originalDefault.set = "\t"
+        self.originalUnitWidget = OptionMenu(self.topFrame, 
+                                                self.originalUnit.get(), 
+                                                self.originalUnit.get(), 
+                                                *(self.metricTuple + self.imperialTuple))
+        
 
         self.to = Label(self.topFrame, text = "\tTO\t")
 
@@ -52,16 +59,16 @@ class Converter:
         self.botFrame.grid(row = 1, column = 0)
 
         self.inputValueWidget.grid(row = 0, column = 0)
-        #self.originalUnitWidget.grid(row = 0, column = 1)
+        self.originalUnitWidget.grid(row = 0, column = 1)
         self.to.grid(row = 0, column = 2)
         #self.newUnitWidget.grid(row = 0, column = 3
 
         self.calculateButton.grid(row = 0, column = 0)
         self.resultWidget.grid(row = 1, column = 0)
 
-        
-
+    
 
 root = Tk()
 application = Converter(root)
 root.mainloop()
+'''
